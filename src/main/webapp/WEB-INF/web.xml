@@ -2,7 +2,8 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://java.sun.com/xml/ns/javaee">
 	<!-- When a user accesses the base URL of your web application (e.g., http://example.com/ex02/), 
-		the server will search for the listed welcome files in the order specified to serves -->
+		the server will search for the listed welcome files in the order specified 
+		to serves -->
 	<display-name>ex02</display-name>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
@@ -12,4 +13,20 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
+
+	<!-- This references the filter by name (sitemesh), connecting it to the 
+		filter class defined earlier -->
+	<filter>
+		<filter-name>sitemesh</filter-name>
+		<filter-class>org.sitemesh.config.ConfigurableSiteMeshFilter
+		</filter-class>
+	</filter>
+	<!-- The URL pattern /* means that sitemesh will be applied to all URLs 
+		in the application. sitemesh will intercept all requests made to the web 
+		application and apply decorators as specified in the sitemesh configuration 
+		(like sitemesh3.xml) -->
+	<filter-mapping>
+		<filter-name>sitemesh</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 </web-app>
