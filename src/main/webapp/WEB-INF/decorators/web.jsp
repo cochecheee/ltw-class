@@ -301,6 +301,8 @@
 	<!-- pop up -->
 	<script src="${URL}assets/global/plugins/uniform/jquery.uniform.min.js"
 		type="text/javascript"></script>
+	<script src="../../assets/frontend/layout/scripts/layout.js"
+		type="text/javascript"></script>
 	<!-- Quantity -->
 
 	<!-- BEGIN LayerSlider -->
@@ -331,7 +333,7 @@
 			Layout.initTouchspin();
 			Layout.initTwitter();
 			Layout.initUniform();
-			
+
 			Layout.initFixHeaderWithPreHeader();
 			Layout.initNavScrolling();
 		});
