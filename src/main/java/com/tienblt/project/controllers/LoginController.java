@@ -6,7 +6,6 @@ import com.tienblt.project.models.UserModel;
 import com.tienblt.project.services.IUserService;
 import com.tienblt.project.services.impl.UserServiceImpl;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
