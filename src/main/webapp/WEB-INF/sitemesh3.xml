@@ -3,6 +3,7 @@
 	<!-- For requests to paths that match /*, the web.jsp decorator is applied. 
 		For requests to paths that match /user/*, the user.jsp decorator is applied. 
 		decorator=value, value is the path of decorator's file -->
+		<!-- sitemesh:write  -->
 	<mapping path="/*" decorator="web.jsp" />
 	<mapping path="/user/*" decorator="user.jsp" />
 	<mapping path="/admin/*" decorator="admin.jsp" />

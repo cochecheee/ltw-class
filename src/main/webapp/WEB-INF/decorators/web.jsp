@@ -148,6 +148,7 @@
 	<%@ include file="/commons/web/slider.jsp"%>
 	<!-- END SLIDER -->
 
+	
 	<div class="main">
 		<div class="container">
 		<sitemesh:write property="body" />
