@@ -2,35 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="/commons/taglib.jsp"%>
 
-<html lang="en">
-<!--<![endif]-->
-<!-- Head BEGIN -->
-<head>
-<meta charset="utf-8">
-<title>Login | Metronic Frontend</title>
-
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-<meta content="Metronic Shop UI description" name="description">
-<meta content="Metronic Shop UI keywords" name="keywords">
-<meta content="keenthemes" name="author">
-
-<meta property="og:site_name" content="-CUSTOMER VALUE-">
-<meta property="og:title" content="-CUSTOMER VALUE-">
-<meta property="og:description" content="-CUSTOMER VALUE-">
-<meta property="og:type" content="website">
-<meta property="og:image" content="-CUSTOMER VALUE-">
-<!-- link to image for socio -->
-<meta property="og:url" content="-CUSTOMER VALUE-">
-
-<link rel="shortcut icon" href="favicon.ico">
-
-<!-- Fonts START -->
-<link
-	href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all"
-	rel="stylesheet" type="text/css">
-<!-- Fonts END -->
 
 <!-- Global styles START -->
 <link
@@ -84,28 +55,7 @@
 	<!-- END BEGIN STYLE CUSTOMIZER -->
 
 	<!-- BEGIN TOP BAR -->
-	<div class="pre-header">
-		<div class="container">
-			<div class="row">
-				<!-- BEGIN TOP BAR LEFT PART -->
-				<div class="col-md-6 col-sm-6 additional-shop-info">
-					<ul class="list-unstyled list-inline">
-						<li><i class="fa fa-phone"></i><span>+1 456 6717</span></li>
-						<li><i class="fa fa-envelope-o"></i><span>info@keenthemes.com</span></li>
-					</ul>
-				</div>
-				<!-- END TOP BAR LEFT PART -->
-				<!-- BEGIN TOP BAR MENU -->
-				<div class="col-md-6 col-sm-6 additional-nav">
-					<ul class="list-unstyled list-inline pull-right">
-						<li><a href="page-login.html">Log In</a></li>
-						<li><a href="page-reg-page.html">Registration</a></li>
-					</ul>
-				</div>
-				<!-- END TOP BAR MENU -->
-			</div>
-		</div>
-	</div>
+
 	<!-- END TOP BAR -->
 	<!-- BEGIN HEADER -->
 	<div class="header">
@@ -323,7 +273,16 @@
 											<input type="text" class="form-control" id="password"
 												name="password" required="required">
 										</div>
+
+
 									</div>
+									<div class="form-group">
+										<label for="remember" class="col-lg-4 control-label">
+											<input type="checkbox" name="remember" id="remember">
+											Remember me
+										</label>
+									</div>
+
 									<div class="row">
 										<div class="col-lg-8 col-md-offset-4 padding-left-0">
 											<a href="page-forgotton-password.html">Forget Password?</a>
@@ -498,41 +457,6 @@
 		</div>
 	</div>
 	<!-- END FOOTER -->
-
-	<!-- Load javascripts at bottom, this will reduce page load time -->
-	<!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
-	<!--[if lt IE 9]>
-    <script src="${URL}assets/global/plugins/respond.min.js"></script>
-    <![endif]-->
-	<script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script>
-	<script src="${URL}assets/global/plugins/jquery.min.js"
-		type="text/javascript"></script>
-	<script src="${URL}assets/global/plugins/jquery-migrate.min.js"
-		type="text/javascript"></script>
-	<script src="${URL}assets/global/plugins/bootstrap/js/bootstrap.min.js"
-		type="text/javascript"></script>
-	<script src="${URL}assets/frontend/layout/scripts/back-to-top.js"
-		type="text/javascript"></script>
-	<!-- END CORE PLUGINS -->
-
-	<!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
-	<script
-		src="${URL}assets/global/plugins/fancybox/source/jquery.fancybox.pack.js"
-		type="text/javascript"></script>
-	<!-- pop up -->
-	<script src="${URL}assets/global/plugins/uniform/jquery.uniform.min.js"
-		type="text/javascript"></script>
-
-	<script src="${URL}assets/frontend/layout/scripts/layout.js"
-		type="text/javascript"></script>
-	<script type="text/javascript">
-		jQuery(document).ready(function() {
-			Layout.init();
-			Layout.initUniform();
-			Layout.initTwitter();
-		});
-	</script>
-	<!-- END PAGE LEVEL JAVASCRIPTS -->
 
 
 	<div id="topcontrol" title="Scroll Back to Top"
