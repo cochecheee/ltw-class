@@ -18,4 +18,6 @@ public interface IUserService {
 	boolean checkExistPhone(String phone);
 	
 	boolean forgotPassword(String username, String password);
+	
+	void updatePassword(String username, String password);
 }
