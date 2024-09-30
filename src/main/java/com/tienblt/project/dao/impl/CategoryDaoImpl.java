@@ -130,7 +130,7 @@ public class CategoryDaoImpl implements ICategoryDao {
 			ps.setString(2, category.getImages());
 			ps.setInt(3, category.getStatus());
 			//doc resultset
-			ps.executeUpdate(sql);
+			ps.executeUpdate();
 
 			conn.close();
 			ps.close();
@@ -155,7 +155,7 @@ public class CategoryDaoImpl implements ICategoryDao {
 			ps.setString(2, category.getImages());
 			ps.setInt(3, category.getStatus());
 			//doc resultset
-			ps.executeUpdate(sql);
+			ps.executeUpdate();
 
 			conn.close();
 			ps.close();
@@ -177,7 +177,7 @@ public class CategoryDaoImpl implements ICategoryDao {
 		
 			ps.setInt(1, id);
 			//doc resultset
-			ps.executeUpdate(sql);
+			ps.executeUpdate();
 
 			conn.close();
 			ps.close();
@@ -202,7 +202,7 @@ public class CategoryDaoImpl implements ICategoryDao {
 			ps.setInt(1, status);
 			ps.setInt(2, id);
 	
-			ps.executeUpdate(sql);
+			ps.executeUpdate();
 
 			conn.close();
 			ps.close();
