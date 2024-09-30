@@ -1,10 +1,10 @@
-package com.tienblt.project.dao;
+package com.tienblt.project.services;
 
 import java.util.List;
 
 import com.tienblt.project.models.CategoryModel;
 
-public interface ICategoryDao {
+public interface ICategoryService {
 	List<CategoryModel> findAll();
 	
 	CategoryModel findById(int id);
@@ -16,5 +16,4 @@ public interface ICategoryDao {
 	void update(CategoryModel category);
 	void delete(int id);
 	void updateStatus(int id, int status);
-	
 }
