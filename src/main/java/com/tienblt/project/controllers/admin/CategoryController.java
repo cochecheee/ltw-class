@@ -51,8 +51,12 @@ public class CategoryController extends HttpServlet {
 		}else if((url.contains("/admin/category/edit"))) {
 			int id = Integer.parseInt(req.getParameter("id"));
 			CategoryModel category = cateService.findById(id);
+			
+			// passing parameter back to views (category-edit.jsp)
 			req.setAttribute("cate", category);
-			resp.sendRedirect("/views/");
+			
+			//resp.sendRedirect("/views/");  //?????
+			req.getRequestDispatcher("/views/admin/category-edit.jsp").forward(req, resp);
 		}
 		
 		// <!-- <c:url value="/admin/category/insert --> 
@@ -115,9 +119,11 @@ public class CategoryController extends HttpServlet {
 			//truyen model vao insert
 			cateService.insert(cate);
 			//tra ve view, chuyen tiep
-			resp.sendRedirect(req.getContextPath() + "/admin/categories");
+			resp.sendRedirect(req.getContextPath() + "/admin/categories");	
+		}else if(url.contains("/admin/category/update")) {
 			
-			
+			int id = Integer.parseInt(req.getParameter("id"));
+			CategoryModel category = cateService.findById(id);
 		}
 	}
 }
