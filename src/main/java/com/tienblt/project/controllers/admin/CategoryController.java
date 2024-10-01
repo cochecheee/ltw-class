@@ -1,20 +1,26 @@
 package com.tienblt.project.controllers.admin;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.List;
 
 import com.tienblt.project.models.CategoryModel;
 import com.tienblt.project.services.ICategoryService;
 import com.tienblt.project.services.impl.CategoryServiceImpl;
+import com.tienblt.project.utils.Constants;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
+import jakarta.servlet.http.Part;
+//add for upload
+@MultipartConfig()
 //ding nghi tat ca url muon thao tac
-@WebServlet(urlPatterns = { "/admin/categories", "/admin/category/add", "/admin/category/insert" })
+@WebServlet(urlPatterns = { "/admin/categories", "/admin/category/add", "/admin/category/insert", "/admin/category/delete", "/admin/category/edit", "/admin/category/update" })
 public class CategoryController extends HttpServlet {
 
 	/**
@@ -38,6 +44,15 @@ public class CategoryController extends HttpServlet {
 			List<CategoryModel> list = cateService.findAll();
 			req.setAttribute("listcate", list);
 			req.getRequestDispatcher("/views/admin/category-list.jsp").forward(req, resp);
+		}else if((url.contains("/admin/category/delete"))) {
+			int id = Integer.parseInt(req.getParameter("id"));
+			cateService.delete(id);
+			resp.sendRedirect(req.getContextPath() + "/admin/categories");
+		}else if((url.contains("/admin/category/edit"))) {
+			int id = Integer.parseInt(req.getParameter("id"));
+			CategoryModel category = cateService.findById(id);
+			req.setAttribute("cate", category);
+			resp.sendRedirect("/views/");
 		}
 		
 		// <!-- <c:url value="/admin/category/insert --> 
@@ -64,6 +79,37 @@ public class CategoryController extends HttpServlet {
 			cate.setCategoryname(categoryName);
 			cate.setStatus(status);
 			cate.setImages(images);
+			
+			//xữ lí upload file
+			String fname = "";
+			String uploadPath = Constants.DIR;
+			File uploadDir = new File(uploadPath);
+			if(!uploadDir.exists()) {
+				uploadDir.mkdir();
+			}
+			
+			try {
+				Part part = req.getPart("images1");
+				if(part.getSize() > 0) {
+					String filename = Paths.get(part.getSubmittedFileName()).getFileName().toString();
+					//đổi tên file
+					int index = filename.lastIndexOf(".");
+					String ext = filename.substring(index+1);
+					fname = System.currentTimeMillis() + "." + ext;
+					//upload file
+					part.write(uploadPath + "/" + fname);
+					// ghi ten file vao data
+					cate.setImages(fname);
+					
+				}else if(images != null){
+					cate.setImages(images);
+				}else {
+					cate.setImages("avatar.png");
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
 			
 			//mvc khong can service va dao
 			//truyen model vao insert
