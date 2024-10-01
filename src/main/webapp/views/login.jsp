@@ -142,7 +142,8 @@
 							<li><a href="page-404.html">404</a></li>
 							<li><a href="page-500.html">500</a></li>
 							<li class="active"><a href="page-login.html">Login Page</a></li>
-							<li><a href="page-forgotton-password.html">Forget
+							<li><a
+								href="${pageContext.request.contextPath }/forgotPassword">Forget
 									Password</a></li>
 							<li><a href="page-reg-page.html">Signup Page</a></li>
 							<li><a href="page-careers.html">Careers</a></li>
@@ -276,8 +277,8 @@
 
 
 									</div>
-									<div class="form-group">
-										<label for="remember" class="col-lg-4 control-label">
+									<div class="form-group" style="padding-left: 175px;">
+										<label for="remember" class=" control-label">
 											<input type="checkbox" name="remember" id="remember">
 											Remember me
 										</label>
@@ -285,7 +286,7 @@
 
 									<div class="row">
 										<div class="col-lg-8 col-md-offset-4 padding-left-0">
-											<a href="page-forgotton-password.html">Forget Password?</a>
+											<a href="${pageContext.request.contextPath}/forgotPassword">Forget Password?</a>
 										</div>
 									</div>
 									<div class="row">
