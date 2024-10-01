@@ -14,6 +14,7 @@
 	<c:forEach items="${listcate}" var="cate" varStatus="STT">
 		<tr>
 			<td>${STT.index+1 }</td>
+			<c:if test="${cate.images.substring(0,5)=='https' }"></c:if>
 			<c:url value="/image?fname=${cate.images }" var="imgUrl"></c:url>
 			<td><img height="150" width="200" src="${imgUrl}" /></td>
 			<td>${cate.categoryname }</td>

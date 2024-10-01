@@ -10,6 +10,10 @@
 	<input type="text" id="fname" name="categoryname"><br> 
 	<label for="lname">Link images:</label><br> 
 	<input type="text" id="lname" name="images"><br> 
+
+	
+		<label for="images1">Upload file:</label><br>
+	<input type="file" id="images1" name="images1"> <br>
 	
 	 <input type="radio" id="ston" name="status" value="1">
 	 <label for="css">On</label><br>
