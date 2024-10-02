@@ -31,6 +31,5 @@ public class DownloadFileController extends HttpServlet {
 		if (file.exists()) {
 			IOUtils.copy(new FileInputStream(file), resp.getOutputStream());
 		}
-
 	}
 }
