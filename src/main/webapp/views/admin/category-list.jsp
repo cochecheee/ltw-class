@@ -4,7 +4,7 @@
 
 <a href="${pageContext.request.contextPath}/admin/category/add"> Add
 	Category</a>
-<table>
+<table border="1" width="100%">
 	<tr>
 		<th>STT</th>
 		<th>Images</th>

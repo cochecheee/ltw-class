@@ -6,7 +6,7 @@
 <!-- jsp below -->
 <a href="${pageContext.request.contextPath}/admin/category/add"></a>
 <form action="${pageContext.request.contextPath}/admin/category/insert"
-	method="post">
+	method="post" enctype="multipart/form-data">
 	<label for="fname">Category name:</label><br> <input type="text"
 		id="fname" name="categoryname"><br> <label for="lname">Link
 		images:</label><br> <input type="text" id="lname" name="images"><br>
